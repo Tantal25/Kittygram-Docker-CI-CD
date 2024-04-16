@@ -17,6 +17,7 @@ services:
       - db
     volumes:
       - static:/backend_static
+      - media:/media
   frontend:
     env_file: .env
     image: tantal25/kittygram_frontend
@@ -27,7 +28,8 @@ services:
     image: tantal25/kittygram_gateway
     env_file: .env
     volumes:
-      - static:/staticfiles/
+      - static:/staticfiles
+      - media:/media
     ports:
       - 9000:80
     
